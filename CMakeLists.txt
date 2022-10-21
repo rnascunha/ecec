@@ -23,7 +23,7 @@ set_target_properties(ece PROPERTIES
   OUTPUT_NAME ece
   VERSION "${ECE_VERSION}")
 target_include_directories(ece
-  PUBLIC include
+  PUBLIC $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include> $<INSTALL_INTERFACE:include>
   PUBLIC ${OPENSSL_INCLUDE_DIR})
 target_link_libraries(ece
   PUBLIC ${OPENSSL_LIBRARIES})
